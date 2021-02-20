@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8818651568432233948}
   m_Layer: 0
   m_Name: AttackerSpawner
-  m_TagString: Untagged
+  m_TagString: atkSpawner
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,6 +43,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdc610792fb3f2459040204860c2a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackerpref: {fileID: 5137965933227500725, guid: 9f19aec399ee5d3488300e338fbf72ca,
-    type: 3}
-  AtkerGroup: {fileID: 0}
