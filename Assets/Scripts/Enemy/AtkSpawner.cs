@@ -1,36 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class AtkSpawner : MonoBehaviour
 {
-    public Attacker attackerpref;
-    bool spawn = true;
-    //public Transform AtkerGroup;
-    // Start is called before the first frame update
-    IEnumerator Start()
+    //public Attacker attackerpref;
+
+    public void SpawnAttacker(string prePath)
     {
-        while(spawn)
+
+        try
         {
-            //System.Random rand = new System.Random();
-            yield return new WaitForSeconds(Random.Range(2, 5));
-
-            SpawnAttacker();
-        
+            var prefab = PrefabUtility.LoadPrefabContents(prePath);
+            if(!prefab)
+            {
+                Debug.LogError("prefab is null. Path " + prePath);
+                return;
+            }
+            Debug.Log("got a prefab");
+            var attacker = prefab.GetComponent<Attacker>();
+            if (!attacker)
+            {
+                Debug.LogError("not have attacker in this prefab: " +  prePath);
+            }
+            Attacker newAttacker = Instantiate(attacker, transform.position, Quaternion.identity);
+            newAttacker.transform.parent = this.transform;
         }
-      
-    }
-
-
-    private void SpawnAttacker()
-    {
-        Attacker newAttacker = Instantiate( attackerpref, transform.position, Quaternion.identity);
-        newAttacker.transform.parent = this.transform;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        catch (Exception e)
+        {
+            Debug.LogError("error when get attacker prefab " + e);
+        }
     }
 }

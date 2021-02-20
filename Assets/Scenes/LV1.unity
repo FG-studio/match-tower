@@ -1008,6 +1008,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1731161001}
+  - component: {fileID: 1731161002}
   m_Layer: 0
   m_Name: Attacker Area
   m_TagString: Untagged
@@ -1034,6 +1035,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1731161002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731161000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe98949a16c6a84db78bcc5b44f05fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1734467566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
