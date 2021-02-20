@@ -8,7 +8,7 @@ public class AtkSpawner : MonoBehaviour
 {
     //public Attacker attackerpref;
 
-    public void SpawnAttacker(string prePath)
+    public void SpawnAttacker(string prePath, ICreepObserver creepObserver)
     {
 
         try
@@ -19,13 +19,13 @@ public class AtkSpawner : MonoBehaviour
                 Debug.LogError("prefab is null. Path " + prePath);
                 return;
             }
-            Debug.Log("got a prefab");
             var attacker = prefab.GetComponent<Attacker>();
             if (!attacker)
             {
                 Debug.LogError("not have attacker in this prefab: " +  prePath);
             }
             Attacker newAttacker = Instantiate(attacker, transform.position, Quaternion.identity);
+            newAttacker.AddObserver(creepObserver);
             newAttacker.transform.parent = this.transform;
         }
         catch (Exception e)

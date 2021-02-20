@@ -9,6 +9,7 @@ public class Attacker : MonoBehaviour
     public float moveSpeed;
     public int damage;
     GameObject currentTarget;
+    ICreepObserver creepObserver; 
     
     // Update is called once per frame
     void Update()
@@ -23,6 +24,11 @@ public class Attacker : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("attacking", false);
         }
+    }
+
+    public void AddObserver(ICreepObserver obs)
+    {
+        creepObserver = obs;
     }
 
     public void SetSpeed(float newspeed)
@@ -44,5 +50,11 @@ public class Attacker : MonoBehaviour
         {
             health.DealDamage(damage);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("onAttacker destroyed");
+        if(creepObserver != null) creepObserver.onCreepDestoyed();
     }
 }
