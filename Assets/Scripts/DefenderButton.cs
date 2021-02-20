@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DefenderButton : MonoBehaviour
 {
     public Defender defenderPref;
-    private void OnMouseDown() 
+    public Image background;
+    
+
+
+    public void SelectDefenderButton() 
     {
-        var buttons = FindObjectsOfType<DefenderButton>();
-        foreach(DefenderButton button in buttons)
-        {
-            button.GetComponent<SpriteRenderer>().color = new Color32 (130,130,130, 255);
-        }
-        GetComponent<SpriteRenderer>().color = Color.white;
-        FindObjectOfType<DefenderSpawner>().SetSelectedDefender(defenderPref);
+        DefenderController.Instance.SetWhiteOtherButton();
+        background.color = Color.green;
+        DefenderSpawner.Instance.SetDefenderPref(defenderPref);
     }
+
+   
+   
 }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     int currentSceneIndex;
-    static SceneLoader Instance;
+    public static SceneLoader Instance;
 
     private void Awake() {
         Instance = this;
@@ -29,13 +29,14 @@ public class SceneLoader : MonoBehaviour
         LoadNextScene();
     }
 
-    private void LoadNextScene()
+    public void LoadNextScene()
     {
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
-    // Update is called once per frame
-    void Update()
+    
+    public void LoadPreviousScene()
     {
-        
+        SceneManager.LoadScene(currentSceneIndex-1);
     }
+
 }
