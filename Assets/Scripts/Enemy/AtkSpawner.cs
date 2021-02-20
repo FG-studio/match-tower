@@ -6,6 +6,7 @@ public class AtkSpawner : MonoBehaviour
 {
     public Attacker attackerpref;
     bool spawn = true;
+    //public Transform AtkerGroup;
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -23,7 +24,8 @@ public class AtkSpawner : MonoBehaviour
 
     private void SpawnAttacker()
     {
-        Instantiate( attackerpref, transform.position, Quaternion.identity);
+        Attacker newAttacker = Instantiate( attackerpref, transform.position, Quaternion.identity);
+        newAttacker.transform.parent = this.transform;
     }
 
     // Update is called once per frame
