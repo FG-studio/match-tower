@@ -6,8 +6,10 @@ public class SpawnerControl : MonoBehaviour
 {
     bool spawn = true;
     List<AtkSpawner> listSpawner = new List<AtkSpawner>();
+    Level level = new Level();
+    Wave wave;
     // Start is called before the first frame update
-    IEnumerator Start()
+    void Start()
     {
         GameObject[] listObject = GameObject.FindGameObjectsWithTag("atkSpawner");
         foreach (var obj in listObject)
@@ -16,18 +18,56 @@ public class SpawnerControl : MonoBehaviour
             if (spawnerTmp == null) continue;
             listSpawner.Add(spawnerTmp);
         }
-        while (spawn)
+        StartCoroutine(StartWave());
+    }
+
+    IEnumerator StartWave()
+    {
+        Debug.Log("start wave");
+        GetNextWave();
+        while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2, 5));
+            //FIXME: something wrong with there, it not run to end level;
+            if (wave == null)
+            {
+                Debug.Log("end level");
+                StopCoroutine("StartWave");
+                yield return null;
+            }
+            if(wave.NumberCreepLeft == 0)
+            {
+                Debug.Log("not have creep left, not spawn anything else");
+                yield return null;
+            }
+            if(wave.IsEndWave)
+            {
+                Debug.Log("last creep is destroyed, next wave incoming");
+                GetNextWave();
+                yield return new WaitForSeconds(5);
+            }
+            yield return new WaitForSeconds(Random.Range(2, wave.SpawnMaxDuration));
             SpawnAttacker();
         }
+    }
+
+    private void GetNextWave()
+    {
+        wave = level.NextWave();
     }
 
     private void SpawnAttacker()
     {
         if(listSpawner.Count <= 0) { return; }
-        int idxOfSpawner = Random.Range(0, listSpawner.Count - 1);
-        AtkSpawner spawner = listSpawner[idxOfSpawner];
-        spawner.SpawnAttacker(Constant.GetPrefabPath(Constant.LIZZARD_PATH));
+        if(wave == null) { return; }
+        string[] listCreep = wave.GetNextCreep();
+        if (listCreep.Length <= 0) return;
+        foreach(var creep in listCreep)
+        {
+            //FIXME: why last lane not spawn
+            int idxOfSpawner = Random.Range(0, listSpawner.Count - 1);
+            AtkSpawner spawner = listSpawner[idxOfSpawner];
+            spawner.SpawnAttacker(Constant.GetPrefabPath(creep), wave);
+        }
+        //Debug.Log("wave left: " + wave.NumberCreepLeft);
     }
 }
