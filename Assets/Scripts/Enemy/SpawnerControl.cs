@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnerControl : MonoBehaviour
 {
     bool spawn = true;
-    List<AtkSpawner> listSpawner = new List<AtkSpawner>();
+    [SerializeField] List<AtkSpawner> listSpawner = new List<AtkSpawner>();
     Level level = new Level();
     Wave wave;
     // Start is called before the first frame update
@@ -64,7 +64,7 @@ public class SpawnerControl : MonoBehaviour
         foreach(var creep in listCreep)
         {
             //FIXME: why last lane not spawn
-            int idxOfSpawner = Random.Range(0, listSpawner.Count - 1);
+            int idxOfSpawner = Random.Range(0, listSpawner.Count);
             AtkSpawner spawner = listSpawner[idxOfSpawner];
             spawner.SpawnAttacker(Constant.GetPrefabPath(creep), wave);
         }

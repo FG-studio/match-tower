@@ -10,14 +10,13 @@ public interface ILevel
 public class Level: ILevel
 {
     protected WaveConfig[] listWave = {
-        new WaveConfig(20, new List<string>{ Constant.LIZZARD }.ToArray(), new List<int>{ 20 }.ToArray(), 5, 3, 4 ),
+        new WaveConfig(5, new List<string>{ Constant.LIZZARD, Constant.EYEBUG }.ToArray(), 
+                            new List<int>{ 2, 3 }.ToArray(), 5, 3, 7 ),
         new WaveConfig(
-            30, 
-            new List<string>{ Constant.LIZZARD }.ToArray(), 
-            new List<int>{ 20 }.ToArray(), 
-            4, 
-            4, 
-            2 ),
+            50, 
+            new List<string>{ Constant.EYEBUG, Constant.KONG, Constant.DRILL }.ToArray(), 
+            new List<int>{ 25, 15, 10 }.ToArray(), 
+            4, 5, 15 ),
     };
     protected int currentWave = 0;
 

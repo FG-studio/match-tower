@@ -7,7 +7,10 @@ public class Constant
 {
     // MONSTER 
     public static string LIZZARD = "Attacker/Lizard";
-    public static string NEw_MONSTER = "new_monter";
+    public static string DRILL = "Attacker/DrillAgent";
+    public static string EYEBUG = "Attacker/EyeBug";
+    public static string KONG = "Attacker/KongMachine";
+    
 
     public static string GetPrefabPath(string name)
     {
