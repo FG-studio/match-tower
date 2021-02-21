@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -143,18 +144,12 @@ public class Wave: ICreepObserver
 
     protected string selectCreep()
     {
-        //FIXME: defer infinity loop
-        while (true)
-        {
-            int idx = UnityEngine.Random.Range(0, _listCreepLeft.Length);
-            int left = _listCreepLeft[idx];
-            if (left >= 0)
-            {
-                _listCreepLeft[idx] = left - 1;
-                _numberCreepLeft--;
-                return _config.CreepTypeList[idx];
-            }
-        }
+        int[] listCreepNonLeft = _listCreepLeft
+            .Select((x, idx) => new { Value = x, Index = idx})
+            .Where(x => x.Value == 0)
+            .Select(x => x.Index)
+            .ToArray();
+        return _config.CreepTypeList[Array.RandomNumberWithExcept(0, _listCreepLeft.Length - 1, listCreepNonLeft)];
     }
 
     private bool CanSpawnMulti()
