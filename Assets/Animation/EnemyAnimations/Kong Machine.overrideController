@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Kong Machine
+  m_Controller: {fileID: 9100000, guid: 0ac67d6768616a0488db554c19f68471, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e8c350f892943404e9eb9cc5752192cd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 71521f2c48122264698b1176051c8632, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c4f6655f0c8583745a6d7e40f3ffc4ba, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c11e4c7e5bba36543a8e1f30e5057a5d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 174d62bb33c486a4f983d32f9faabd3f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: df397cc9a775c7c4eb6bc0b6f51b422b, type: 2}

@@ -22,7 +22,7 @@ public class Attacker : MonoBehaviour
     {
         if(!currentTarget)
         {
-            GetComponent<Animator>().SetBool("attacking", false);
+            GetComponent<Animator>().SetBool("atk", false);
         }
     }
 
@@ -38,7 +38,7 @@ public class Attacker : MonoBehaviour
 
     public void Attacking(GameObject target)
     {
-        GetComponent<Animator>().SetBool("attacking", true);
+        GetComponent<Animator>().SetBool("atk", true);
         currentTarget = target;
     }
 

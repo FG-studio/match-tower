@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.37
+      value: 2.01
       objectReference: {fileID: 0}
     - target: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
         type: 3}
@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.37
+      value: 5.01
       objectReference: {fileID: 0}
     - target: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
         type: 3}
@@ -620,7 +620,7 @@ PrefabInstance:
     - target: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3699999
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
         type: 3}
@@ -1047,6 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe98949a16c6a84db78bcc5b44f05fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listSpawner: []
 --- !u!4 &1734467566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
@@ -1073,7 +1074,7 @@ PrefabInstance:
     - target: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.37
+      value: 4.01
       objectReference: {fileID: 0}
     - target: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
         type: 3}
@@ -1147,7 +1148,7 @@ PrefabInstance:
     - target: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.37
+      value: 3.01
       objectReference: {fileID: 0}
     - target: {fileID: 8818651568432233949, guid: 7c59450536a740d4aa575b51bde3152f,
         type: 3}

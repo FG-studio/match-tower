@@ -22,6 +22,7 @@ public class LoseCondition : MonoBehaviour
         var attacker = collider.GetComponent<Attacker>();
         if (attacker)
         {
+            Destroy(attacker.gameObject);
             LP--;
             UpdateLP();
             StartCoroutine(CheckLP());
