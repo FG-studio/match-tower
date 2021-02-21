@@ -54,7 +54,6 @@ public class Attacker : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("onAttacker destroyed");
         if(creepObserver != null) creepObserver.onCreepDestoyed();
     }
 }
