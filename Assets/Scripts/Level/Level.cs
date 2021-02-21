@@ -10,8 +10,8 @@ public interface ILevel
 public class Level: ILevel
 {
     protected WaveConfig[] listWave = {
-        new WaveConfig(5, new List<string>{ Constant.LIZZARD, Constant.EYEBUG }.ToArray(), 
-                            new List<int>{ 2, 3 }.ToArray(), 5, 3, 7 ),
+        new WaveConfig(20, new List<string>{ Constant.EYEBUG, Constant.KONG }.ToArray(), 
+                            new List<int>{ 15, 5 }.ToArray(), 5, 3, 7 ),
         new WaveConfig(
             50, 
             new List<string>{ Constant.EYEBUG, Constant.KONG, Constant.DRILL }.ToArray(), 

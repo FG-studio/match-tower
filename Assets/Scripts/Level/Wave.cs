@@ -146,7 +146,7 @@ public class Wave: ICreepObserver
         //FIXME: defer infinity loop
         while (true)
         {
-            int idx = UnityEngine.Random.Range(0, _listCreepLeft.Length - 1);
+            int idx = UnityEngine.Random.Range(0, _listCreepLeft.Length);
             int left = _listCreepLeft[idx];
             if (left >= 0)
             {
