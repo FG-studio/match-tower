@@ -10,7 +10,9 @@ public class Constant
     public static string DRILL = "Attacker/DrillAgent";
     public static string EYEBUG = "Attacker/EyeBug";
     public static string KONG = "Attacker/KongMachine";
-    
+
+    //TOWER
+    public static string CACTUS = "CATUS";
 
     public static string GetPrefabPath(string name)
     {

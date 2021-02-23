@@ -9,6 +9,8 @@ public class DefenderController : MonoBehaviour
     public List<DefenderButton> selectedButtons;
     public Transform buttonSpawnParent;
 
+    CardFactory _cardFactory = new CardFactory();
+
     private void Awake() {
         Instance = this;
     }
@@ -23,7 +25,18 @@ public class DefenderController : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             //spawn
-            DefenderButton defender = Instantiate(defenderButtonsPref[0], transform.position, Quaternion.identity);
+            var card = GetCard(Constant.CACTUS);
+            if (card == null)
+            {
+                yield return null;
+            }
+            var button = card.GetDefenderButton();
+            if (button == null)
+            {
+                yield return null;
+            }
+            DefenderButton defender = Instantiate(button, transform.position, Quaternion.identity);
+            defender.Card = button.Card;
             defender.transform.parent = buttonSpawnParent;
             defender.transform.localScale = Vector3.one;
             
@@ -56,4 +69,9 @@ public class DefenderController : MonoBehaviour
             }
         }
     }
+
+   TowerCard GetCard(string name)
+   {
+        return _cardFactory.MakeTowerCard(name);
+   }
 }
