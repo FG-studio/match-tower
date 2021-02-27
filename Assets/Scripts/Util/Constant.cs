@@ -12,7 +12,8 @@ public class Constant
     public static string KONG = "Attacker/KongMachine";
 
     //TOWER
-    public static string CACTUS = "CATUS";
+    public static string TOWER2 = "Tower2";
+    public static string TOWER1 = "Tower1";
 
     public static string GetPrefabPath(string name)
     {

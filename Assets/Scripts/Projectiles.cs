@@ -5,10 +5,10 @@ using UnityEngine;
 public class Projectiles : MonoBehaviour
 {
     public int damage;
-    public int projectSpeed;
+    public float projectileSpeed;
 
     private void Update() {
-        transform.Translate(Vector2.right * Time.deltaTime * projectSpeed);
+        transform.Translate(Vector2.right * Time.deltaTime * projectileSpeed);
     }
 
 
@@ -26,5 +26,10 @@ public class Projectiles : MonoBehaviour
         else
             return;
             //Destroy(this.gameObject, 5f);
+    }
+
+    public void SetSpeed(float newspeed)
+    {
+        projectileSpeed = newspeed;
     }
 }

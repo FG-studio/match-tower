@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tower2
+  m_Controller: {fileID: 9100000, guid: 0c118fad507c3954da5951bb7f24bbe8, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b23d6bc297b9e264fa97f7f2e82aeb63, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7beeb0c0e0516d447ae01149bc3a5640, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e1166d25385e7ca47a5d00a72aad0c14, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d99c816b06017454198512a166fdf8de, type: 2}

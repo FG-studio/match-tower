@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 1479701400}
   - component: {fileID: 1479701399}
   m_Layer: 5
-  m_Name: Protect Area
+  m_Name: Defender Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
