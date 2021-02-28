@@ -38,7 +38,6 @@ public class TowerCard
             Debug.LogError("not have attacker in this prefab: " + this._cardPath);
         }
         button.Card = this;
-        Debug.Log("assigned for button done " + button.Card.ToString());
         return button;
     }
 

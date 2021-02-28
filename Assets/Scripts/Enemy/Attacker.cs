@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
-
-    [Range(0f, 5f)]
-    public float moveSpeed;
-    public int damage;
+    float moveSpeed;
+    int damage;
     GameObject currentTarget;
-    ICreepObserver creepObserver; 
-    
+    ICreepObserver creepObserver;
+
+    public void Start()
+    {
+        var monster = GetComponent<Monster>();
+        if (monster)
+        {
+            var stats = monster.GetStats();
+            moveSpeed = stats.Speed;
+            damage = stats.Damage;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,7 +31,7 @@ public class Attacker : MonoBehaviour
     {
         if(!currentTarget)
         {
-            GetComponent<Animator>().SetBool("atk", false);
+            GetComponent<Animator>().SetBool("attacking", false);
         }
     }
 
@@ -38,17 +47,17 @@ public class Attacker : MonoBehaviour
 
     public void Attacking(GameObject target)
     {
-        GetComponent<Animator>().SetBool("atk", true);
+        GetComponent<Animator>().SetBool("attacking", true);
         currentTarget = target;
     }
 
     public void DealDamageToTarget()
     {
         if (!currentTarget) return;
-        Health health = currentTarget.GetComponent<Health>();
-        if (health)
+        Monster target = currentTarget.GetComponent<Monster>();
+        if (target)
         {
-            health.DealDamage(damage);
+            target.onDamage(damage);
         }
     }
 

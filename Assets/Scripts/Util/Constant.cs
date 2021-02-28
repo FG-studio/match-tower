@@ -6,13 +6,16 @@ using UnityEditor;
 public class Constant
 {
     // MONSTER 
-    public static string LIZZARD = "Attacker/Lizard";
-    public static string DRILL = "Attacker/DrillAgent";
-    public static string EYEBUG = "Attacker/EyeBug";
-    public static string KONG = "Attacker/KongMachine";
+    public const string LIZZARD = "Attacker/Lizard";
+    public const string DRILL = "Attacker/DrillAgent";
+    public const string EYEBUG = "Attacker/EyeBug";
+    public const string KONG = "Attacker/KongMachine";
 
     //TOWER
-    public static string CACTUS = "CATUS";
+    public const string CACTUS = "CATUS";
+
+    // EFFECT
+    public const string POSION = "Posion";
 
     public static string GetPrefabPath(string name)
     {
@@ -21,4 +24,9 @@ public class Constant
 
     //Config
     public static int NUMBER_LANE = 5;
+
+    //Stats Field
+    public const string HEALTH = "HP";
+    public const string DAMAGE = "damage";
+    public const string SPEED = "speed";
 }

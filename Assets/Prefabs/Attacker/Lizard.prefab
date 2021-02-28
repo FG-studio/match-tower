@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5137965933227500721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.66, y: 5.32, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,8 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e06ff56128314d4da5a386a92b4e2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
-  damage: 50
 --- !u!114 &7051244602049712545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 100
+  speed: 0.5
+  damage: 20
   deathVFX: {fileID: 5464165051696209674, guid: 5c19392d24b639b499d96c746b21b218,
     type: 3}
 --- !u!50 &4244147246532117055
