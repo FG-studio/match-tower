@@ -8,10 +8,17 @@ public class Defender : MonoBehaviour
     public Transform GunPos;
     public AtkSpawner myLaneSpawner;
     Animator Defenderanim;
+    int damage;
     
     private void Start() {
         Defenderanim = GetComponent<Animator>();
         SetLaneSpawner();
+        var monster = GetComponent<Monster>();
+        if (monster)
+        {
+            var stats = monster.GetStats();
+            damage = stats.Damage;
+        }
     }
 
     private void Update() {
@@ -32,6 +39,8 @@ public class Defender : MonoBehaviour
     {
         if(!projectile) return;
         GameObject newprojectile = Instantiate(projectile, GunPos.position, Quaternion.identity);
+        var projectileCom = newprojectile.GetComponent<Projectiles>();
+        projectileCom.SetDamage(damage);
         newprojectile.transform.parent = this.transform;
         Destroy(newprojectile, 5f);
     }
