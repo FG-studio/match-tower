@@ -9,6 +9,8 @@ public class DefenderController : MonoBehaviour
     public List<DefenderButton> selectedButtons;
     public Transform buttonSpawnParent;
 
+    string[] listcards = { Constant.TOWER2, Constant.TOWER1};
+
     CardFactory _cardFactory = new CardFactory();
 
     private void Awake() {
@@ -25,7 +27,8 @@ public class DefenderController : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             //spawn
-            var card = GetCard(Constant.CACTUS);
+            string cardname = listcards[Random.Range(0, listcards.Length)];
+            var card = GetCard(cardname);
             if (card == null)
             {
                 yield return null;
@@ -41,7 +44,7 @@ public class DefenderController : MonoBehaviour
             defender.transform.localScale = Vector3.one;
             
             selectedButtons.Add(defender);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(5f);
         }
     }
 

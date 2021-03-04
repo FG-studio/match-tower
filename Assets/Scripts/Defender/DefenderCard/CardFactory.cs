@@ -7,7 +7,8 @@ public class CardFactory
     Dictionary<string, ITowerCardFactory> _towerMaper = new Dictionary<string, ITowerCardFactory>();
     public CardFactory()
     {
-        _towerMaper.Add(Constant.CACTUS, new CactusFactory());
+        _towerMaper.Add(Constant.TOWER2, new Tower2Factory());
+        _towerMaper.Add(Constant.TOWER1, new Tower1Factory());
     }
 
     public TowerCard MakeTowerCard(string tower)

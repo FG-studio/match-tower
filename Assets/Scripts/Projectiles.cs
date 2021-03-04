@@ -6,12 +6,12 @@ public class Projectiles : MonoBehaviour
 {
     [SerializeField] int damage;
 
-    [SerializeField] int projectSpeed;
+    [SerializeField] int projectileSpeed;
 
     [SerializeField] int effectValue;
 
     private void Update() {
-        transform.Translate(Vector2.right * Time.deltaTime * projectSpeed);
+        transform.Translate(Vector2.right * Time.deltaTime * projectileSpeed);
     }
 
 
@@ -39,5 +39,10 @@ public class Projectiles : MonoBehaviour
             //var effect = EffectFactory.GetInstance().MakeEffect(Constant.POSION, target, 2);
             //target.onDamage(damage, effect, effectValue);
         }
+    }
+
+    public void SetSpeed(int newspeed)
+    {
+        projectileSpeed = newspeed;
     }
 }
