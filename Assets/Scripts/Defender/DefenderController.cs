@@ -44,7 +44,7 @@ public class DefenderController : MonoBehaviour
             defender.transform.localScale = Vector3.one;
             
             selectedButtons.Add(defender);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(5f);
         }
     }
 

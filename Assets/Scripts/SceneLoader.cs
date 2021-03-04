@@ -9,34 +9,25 @@ public class SceneLoader : MonoBehaviour
     public static SceneLoader Instance;
 
     private void Awake() {
-        Instance = this;
-        DontDestroyOnLoad(Instance);
-        
+        if (!Instance)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            return;
+        }
+        Destroy(this.gameObject);
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex == 0)
-        {
-            StartCoroutine(WaitForScreen());
-        }
-    }
+    
 
-    IEnumerator WaitForScreen()
+    public void LoadMainScene()
     {
-        yield return new WaitForSeconds(3);
-        LoadNextScene();
-    }
-
-    public void LoadNextScene()
-    {
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene(1);
     }
     
-    public void LoadPreviousScene()
+    public void LoadEndScene()
     {
-        SceneManager.LoadScene(currentSceneIndex-1);
+        SceneManager.LoadScene(2);
     }
 
 }

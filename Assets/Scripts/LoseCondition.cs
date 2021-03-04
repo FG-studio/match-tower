@@ -41,7 +41,7 @@ public class LoseCondition : MonoBehaviour
         {
             
             yield return new WaitForSeconds(2f);
-            SceneLoader.Instance.LoadNextScene();
+            SceneLoader.Instance.LoadEndScene();
         }
     }
 
