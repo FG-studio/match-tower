@@ -4,31 +4,44 @@ using UnityEngine;
 
 public class Projectiles : MonoBehaviour
 {
-    public int damage;
-    public float projectileSpeed;
+    [SerializeField] int damage;
+
+    [SerializeField] int projectileSpeed;
+
+    [SerializeField] int effectValue;
 
     private void Update() {
         transform.Translate(Vector2.right * Time.deltaTime * projectileSpeed);
     }
 
 
+    public void SetDamage(int damage)
+    {
+        this.damage = damage;
+    }
+
+    public void SetEffectValue(int value)
+    {
+        this.effectValue = value;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collider) {
         var collattacker = collider.GetComponent<Attacker>(); 
-        var collhealth = collider.GetComponent<Health>();
+        var target = collider.GetComponent<Monster>();
 
-        if (collattacker && collhealth)
+        if (collattacker && target)
         {
             Destroy(this.gameObject);
-            collhealth.DealDamage(damage);
-            
+            target.onDamage(damage);
+
+            //use effect
+            //var effect = EffectFactory.GetInstance().MakeEffect(Constant.POSION, target, 2);
+            //target.onDamage(damage, effect, effectValue);
         }
-        else
-            return;
-            //Destroy(this.gameObject, 5f);
     }
 
-    public void SetSpeed(float newspeed)
+    public void SetSpeed(int newspeed)
     {
         projectileSpeed = newspeed;
     }

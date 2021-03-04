@@ -68,8 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e06ff56128314d4da5a386a92b4e2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.51
-  damage: 100
 --- !u!61 &8347487184143546416
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -129,7 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67286baa16ec1241abfda275a6095b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 120
+  HP: 100
+  speed: 0.5
+  damage: 100
   deathVFX: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
 --- !u!114 &4545833329709083237
 MonoBehaviour:
