@@ -838,9 +838,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b74d7519ea3adf46b01fdea7ff700c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defPref: {fileID: 0}
+  currentButton: {fileID: 0}
+  ListButton: []
+  buttonSpawnParent: {fileID: 1631684431}
+  maxButton: 5
+  maxSlot: 35
+  listSlot: []
   slotPref: {fileID: 481518528566031602, guid: 5e79b6ba9297c844eac98832cb461b14, type: 3}
-  slotnumber: 35
 --- !u!1 &1631684430
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +855,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1631684431}
   - component: {fileID: 1631684433}
-  - component: {fileID: 1631684432}
   m_Layer: 5
   m_Name: DefenderButtonCanvas
   m_TagString: Untagged
@@ -878,24 +881,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -464.6}
   m_SizeDelta: {x: 1200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1631684432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631684430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb4bdeaa3daec51488ab7c398543cfc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defenderButtonsPref:
-  - {fileID: 674118519966592031, guid: 03d16531f0a0f184fb4776a00314ff80, type: 3}
-  - {fileID: 674118519966592031, guid: 03d16531f0a0f184fb4776a00314ff80, type: 3}
-  - {fileID: 674118519966592031, guid: 03d16531f0a0f184fb4776a00314ff80, type: 3}
-  selectedButtons: []
-  buttonSpawnParent: {fileID: 1631684431}
 --- !u!114 &1631684433
 MonoBehaviour:
   m_ObjectHideFlags: 0
