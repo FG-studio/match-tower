@@ -21,7 +21,9 @@ class DefenderSpawner : MonoBehaviour, IButtonObserver, ISlotObserver
     [SerializeField] DefenderButton currentButton;
     [SerializeField] List<DefenderButton> ListButton;
     //int buttonindex = -1;
-    public Transform buttonSpawnParent;
+    [SerializeField] Transform buttonSpawnParent;
+    [SerializeField] float timeSpawnButton = 4f;
+
 
     string[] listcards = { Constant.TOWER2, Constant.TOWER1};
 
@@ -77,8 +79,8 @@ class DefenderSpawner : MonoBehaviour, IButtonObserver, ISlotObserver
         ResetButtonIndex();
         currentButton = null;
         //StopCoroutine(ButtonSpawn());
-        StopAllCoroutines();
-        StartCoroutine(ButtonSpawn());
+        //StopAllCoroutines();
+        //StartCoroutine(ButtonSpawn());
     }
 
     private void SlotSpawn()
@@ -103,42 +105,43 @@ class DefenderSpawner : MonoBehaviour, IButtonObserver, ISlotObserver
 
     private void Start() 
     {
-        var spawn = StartCoroutine(ButtonSpawn());
+        
+                var spawn = StartCoroutine(ButtonSpawn()); 
     }
 
     IEnumerator ButtonSpawn()
     {
-        while (ListButton.Count < maxButton)
+        while(true)
         {
-            yield return new WaitForSeconds(3f);
-            //spawn
-            string cardname = listcards[UnityEngine.Random.Range(0, listcards.Length)];
-            var card = GetCard(cardname);
-            if (card == null)
+            if (ListButton.Count < maxButton) 
             {
-                yield return null;
+                yield return new WaitForSeconds(2f);
+                //spawn
+                string cardname = listcards[UnityEngine.Random.Range(0, listcards.Length)];
+                var card = GetCard(cardname);
+                if (card == null)
+                {
+                    yield return null;
+                }
+                var button = card.GetDefenderButton();
+                if (button == null)
+                {
+                    yield return null;
+                }
+                DefenderButton defenderButton = Instantiate(button, transform.position, Quaternion.identity);
+                defenderButton.Card = button.Card;
+                defenderButton.transform.parent = buttonSpawnParent;
+                defenderButton.transform.localScale = Vector3.one;
+                //buttonindex++;
+                defenderButton.observer = this;
+                defenderButton.index = ListButton.Count;
+                ListButton.Add(defenderButton);
+                yield return new WaitForSeconds(timeSpawnButton);
+                Debug.Log("spawn button");  
             }
-            var button = card.GetDefenderButton();
-            if (button == null)
-            {
-                yield return null;
-            }
-
-            DefenderButton defenderButton = Instantiate(button, transform.position, Quaternion.identity);
-            defenderButton.Card = button.Card;
-            defenderButton.transform.parent = buttonSpawnParent;
-            defenderButton.transform.localScale = Vector3.one;
-
-            //buttonindex++;
-            defenderButton.observer = this;
-            defenderButton.index = ListButton.Count;
-            
-            ListButton.Add(defenderButton);
-            yield return new WaitForSeconds(2f);
-
-            Debug.Log("spawn button");
-
-        }
+            else    
+                yield return null;    
+        }  
     }
 
     private void ResetButtonIndex()
