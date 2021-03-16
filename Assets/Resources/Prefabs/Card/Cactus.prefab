@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 674118519966592031}
   - component: {fileID: 2476292241007960294}
   m_Layer: 5
-  m_Name: Tower1
+  m_Name: Cactus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &674118519966592031
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 674118519966592031}
-        m_MethodName: OnButtonClick
+        m_MethodName: SelectDefenderButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -216,7 +216,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 92.020935, y: 88.55226}
+  m_SizeDelta: {x: 134.88147, y: 134.88147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8067954728741613653
 CanvasRenderer:
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2027930145844100893, guid: 42d8d17ac7533b3489f123e7e165c228,
+  m_Sprite: {fileID: -8958792235986353586, guid: 6d2794c4390585145ae49ddc0b39ad82,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0

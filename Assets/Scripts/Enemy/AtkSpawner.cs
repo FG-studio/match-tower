@@ -13,7 +13,7 @@ public class AtkSpawner : MonoBehaviour
 
         try
         {
-            var prefab = PrefabUtility.LoadPrefabContents(prePath);
+            var prefab = Resources.Load<Attacker>(prePath);
             if(!prefab)
             {
                 Debug.LogError("prefab is null. Path " + prePath);
@@ -27,6 +27,7 @@ public class AtkSpawner : MonoBehaviour
             Attacker newAttacker = Instantiate(attacker, transform.position, Quaternion.identity);
             newAttacker.AddObserver(creepObserver);
             newAttacker.transform.parent = this.transform;
+            //newAttacker.transform.localScale = Vector3.one;
         }
         catch (Exception e)
         {

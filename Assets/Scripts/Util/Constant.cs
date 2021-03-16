@@ -12,8 +12,8 @@ public class Constant
     public const string KONG = "Attacker/KongMachine";
 
     //TOWER
-    public static string TOWER2 = "Tower2";
-    public static string TOWER1 = "Tower1";
+    public static string TOWER2 = "Card/Tower2";
+    public static string TOWER1 = "Card/Tower1";
     public const string CACTUS = "CATUS";
 
     // EFFECT
@@ -21,7 +21,7 @@ public class Constant
 
     public static string GetPrefabPath(string name)
     {
-        return "Assets/Prefabs/" + name + ".prefab";
+        return "Prefabs/" + name ; //".prefab"
     }
 
     //Config

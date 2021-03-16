@@ -22,7 +22,7 @@ class DefenderSpawner : MonoBehaviour, IButtonObserver, ISlotObserver
     [SerializeField] List<DefenderButton> ListButton;
     //int buttonindex = -1;
     [SerializeField] Transform buttonSpawnParent;
-    [SerializeField] float timeSpawnButton = 4f;
+    [SerializeField] float timeSpawnButton = 3f;
 
 
     string[] listcards = { Constant.TOWER2, Constant.TOWER1};

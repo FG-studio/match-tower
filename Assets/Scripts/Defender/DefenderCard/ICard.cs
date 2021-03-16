@@ -26,7 +26,7 @@ public class TowerCard
 
     public DefenderButton GetDefenderButton()
     {
-        var prefab = PrefabUtility.LoadPrefabContents(Constant.GetPrefabPath(this._cardPath));
+        var prefab = Resources.Load<DefenderButton>(Constant.GetPrefabPath(this._cardPath));
         if (!prefab)
         {
             Debug.LogError("prefab is null. Path " + this._cardPath);
@@ -43,7 +43,7 @@ public class TowerCard
 
     public Defender GetTower()
     {
-        var prefab = PrefabUtility.LoadPrefabContents(Constant.GetPrefabPath(this._towerPath));
+        var prefab = Resources.Load<Defender>(Constant.GetPrefabPath(this._towerPath));
         if (!prefab)
         {
             Debug.LogError("prefab is null. Path " + this._towerPath);
