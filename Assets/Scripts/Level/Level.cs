@@ -13,7 +13,8 @@ public class Level: ILevel
         new WaveConfig(20, 
             new List<string>{ Constant.EYEBUG, Constant.KONG }.ToArray(), 
             new List<int>{ 15, 5 }.ToArray(), 
-            5, 3, 7 ),
+            6, 3, 7 ), 
+            //spawnMaxDuration, maxSpawnLane, spawnMultiAfter
         new WaveConfig(50, 
             new List<string>{ Constant.EYEBUG, Constant.KONG, Constant.DRILL }.ToArray(), 
             new List<int>{ 25, 15, 10 }.ToArray(), 
@@ -21,7 +22,11 @@ public class Level: ILevel
         new WaveConfig(100, 
             new List<string>{ Constant.EYEBUG, Constant.KONG, Constant.DRILL }.ToArray(), 
             new List<int>{ 40, 40, 20 }.ToArray(), 
-            4, 6, 50 ),
+            3, 7, 50 ),
+        new WaveConfig(200, 
+            new List<string>{ Constant.EYEBUG, Constant.KONG, Constant.DRILL }.ToArray(), 
+            new List<int>{ 70, 50, 80 }.ToArray(), 
+            2, 9, 50 ),
     };
     protected int currentWave = 0;
 

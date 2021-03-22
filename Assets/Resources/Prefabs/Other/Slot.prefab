@@ -120,7 +120,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 481518528566031602}
-        m_MethodName: SpawnDefender
+        m_MethodName: OnSlotClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -142,3 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b45e39a190d1e84c8767059167d22fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: -1
